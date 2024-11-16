@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KASI KULCHA</title>
+    <link rel="stylesheet" href="CSS/CustomerCSS.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>KASI KULCHA</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Delivery Network</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h2>Welcome to the Township E-commerce Marketplace</h2>
+            <p>Connecting Culture</p>
+            <button onclick="location.href='signup.html'">Get Started</button>
+        </section>
+
+        <!-- Community Delivery Network Section -->
+        <section class="community-delivery" id="services">
+            <h2>Community Delivery Network</h2>
+            <p>Experience seamless delivery from your trusted community members.</p>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <button onclick="location.href='delivery-info.html'">Learn More</button>
+        </section>
+
+        <!-- Product Cards Section -->
+        <section class="product-cards" id="products">
+            <h2>Featured Products</h2>
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 1">
+                    <div class="card-content">
+                        <h3>Product 1</h3>
+                        <p>A brief description of the product.</p>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 2">
+                    <div class="card-content">
+                        <h3>Product 2</h3>
+                        <p>A brief description of the product.</p>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/200" alt="Product 3">
+                    <div class="card-content">
+                        <h3>Product 3</h3>
+                        <p>A brief description of the product.</p>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Township E-commerce Marketplace. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="js/map.js"></script>
+</body>
+</html>
