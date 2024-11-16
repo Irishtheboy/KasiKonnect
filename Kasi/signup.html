@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="CSS/signup.css">
+    <script defer src="js/signup.js"></script>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1>Create an Account</h1>
+            <p>Sign up to explore the platform as a Driver, Vendor, or Customer.</p>
+            <form id="signupForm" class="signup-form">
+                <div class="form-group">
+                    <label for="role">Sign Up As</label>
+                    <select id="role" name="role" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="customer">Customer</option>
+                        <option value="vendor">Vendor</option>
+                        <option value="driver">Driver</option>
+                    </select>
+                </div>
+                <div id="dynamicFields">
+                    <!-- Dynamic fields based on role selection -->
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-submit">Sign Up</button>
+                <p></p>
+                <div class="return-to-login">
+                    <button class="btn-submit" onclick="location.href='index.html'">Return to Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #F8F9FA, #E0E7FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Wrapper */
+.login-wrapper {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+/* Header */
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #4A4A4A;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #6C757D;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: #F8F9FA;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #3B82F6;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    background: #FFFFFF;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #A0AEC0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: #3B82F6;
+}
+
+/* Button */
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #3B82F6;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background: #2563EB;
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6C757D;
+}
+
+.login-footer a {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: #2563EB;
+}
