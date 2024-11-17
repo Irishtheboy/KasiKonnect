@@ -3,185 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KASI KULCHA</title>
+    <title>Kasi Kulcha | Connecting Culture</title>
     <link rel="stylesheet" href="CSS/CustomerCSS.css">
-    <style>
-        /* Floating button style */
-        .chatbot-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Chatbot iframe container */
-        #chatbot-container {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 400px;
-            height: 600px;
-            border: 2px solid #008CBA;
-            border-radius: 10px;
-            z-index: 1000;
-            background-color: white;
-        }
-
-        #chatbot-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Exit button inside the chatbot container */
-        .exit-chatbot {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Map Section Style */
-        #map {
-            height: 400px;
-            width: 100%;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="images/logo-removebg-preview.png" alt="Kasi Kulcha Logo" width="150">
+            <img src="images/logo-removebg-preview.png" alt="Kasi Kulcha Logo" width="120">
         </div>
         <nav>
             <ul>
                 <li><a href="CustomerPage.html">Home</a></li>
                 <li><a href="Services.html">Services & Products</a></li>
-                
+                <li><a href="ProfilePage.html">Profile</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h2>Welcome to Kasi Kulcha!</h2>
-            <p>Connecting Culture</p>
-            <button onclick="location.href='Services.html'">Get Started</button>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Welcome to Kasi Kulcha</h1>
+            <p>Your gateway to local culture, products, and services.</p>
+            <button onclick="location.href='Services.html'">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="images/Content/LocalCommu.jpg" alt="Local Community">
+        </div>
 
-        <!-- Community Delivery Network Section -->
-        <section class="community-delivery" id="services">
-            <h2>Community Delivery Network</h2>
-            <p>Experience seamless delivery from your trusted community members.</p>
-            <div class="map-container">
-                <div id="map"></div> <!-- OpenStreetMap will load here -->
+        
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-container">
+            <div class="category-card">
+                <img src="images/Content/img1.jpg" alt="Services">
+                <h3>Services</h3>
             </div>
-            <button onclick="location.href='#'">Track here</button>
-        </section>
-
-        <!-- Product Cards Section -->
-        <section class="product-cards" id="products">
-            <h2>Featured Products</h2>
-            <div class="card-container">
-                <!-- Card 1 -->
-                <div class="card">
-                    <img src="images/Content/img2.jpg" alt="Product 1">
-                    <div class="card-content">
-                        <h3>Services</h3>
-                        <p>Explore a wide range of services offered by local businesses and individuals. From home cleaning to handyman services, we provide everything you need to make your life easier and more convenient. Browse through various categories to find the right service for you.</p>
-                        <button>Head to Services</button>
-                    </div>
-                </div>
-                
-
-                <!-- Card 2 -->
-                <div class="card">
-                    <img src="images/Content/img1.jpg" alt="Product 2">
-                    <div class="card-content">
-                        <h3>Products</h3>
-                        <p>Discover a variety of products available for purchase. From everyday essentials to unique items, our marketplace has something for everyone. Browse through our selection and find exactly what you need, delivered right to your door.</p>
-                        <button>Head to Products</button>
-                    </div>
-                </div>
-                
-
-                <!-- Card 3 -->
-                <div class="card">
-                    <img src="images/Content/img3.jpg" alt="Product 3">
-                    <div class="card-content">
-                        <h3>Home Essentials</h3>
-                        <p>From cleaning supplies to kitchen gadgets, our Home Essentials collection includes everything you need to make your space more comfortable and functional. Explore our high-quality products to simplify your daily tasks and enhance your living environment.</p>
-                        <button>Head to Home Essentials</button>
-                    </div>
-                </div>
-                
+            <div class="category-card">
+                <img src="images/Content/img2.jpg" alt="Products">
+                <h3>Products</h3>
             </div>
-        </section>
-    </main>
+            <div class="category-card">
+                <img src="images/Content/img3.jpg" alt="Home Essentials">
+                <h3>Home Essentials</h3>
+            </div>
+        </div>
+    </section>
+<!-- African Bank Rewards Section -->
+<section class="african-bank-rewards" style="background-color: #ffffff; padding: 40px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center;">
+    <h2 style="font-size: 2em; font-weight: 600; color: #333; margin-bottom: 20px;">Earn Points with African Bank</h2>
+    
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 20px; margin-bottom: 20px;">
+        <!-- African Bank Logo -->
+        <img src="images/Content/AfricanBankLogo-768x349.png" alt="African Bank Logo" style="width: 140px; height: auto; margin-bottom: 20px;">
+        
+        <p style="font-size: 1.2em; color: #555; line-height: 1.6; max-width: 600px;">
+            When you pay using your African Bank card on our website, you earn reward points for every purchase! These points can be redeemed for discounts, exclusive offers, and more. Start earning today!
+        </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="showRewardsPopup()" style="background-color: #4CAF50; color: white; padding: 14px 24px; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+            Learn More
+        </button>
+    </div>
+</section>
+
+<!-- Pop-up Modal for African Bank Rewards -->
+<div id="rewards-popup" class="rewards-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); z-index: 1000;">
+    <h3 style="font-size: 1.6em; font-weight: 600; color: #333; margin-bottom: 20px;">African Bank Rewards</h3>
+    <p style="font-size: 1.2em; color: #555; line-height: 1.6; max-width: 600px; margin-bottom: 20px;">Earn 1 reward point for every R10 spent when using your African Bank card. Collect your points and redeem them for exciting rewards like discounts on future purchases and exclusive offers. Don't miss out on the opportunity to earn while you shop!</p>
+    <button onclick="closeRewardsPopup()" style="background-color: #f44336; color: white; padding: 12px 24px; font-size: 1.1em; border: none; border-radius: 5px; cursor: pointer;">
+        Close
+    </button>
+</div>
+
+<script>
+    // Function to show the rewards popup
+    function showRewardsPopup() {
+        document.getElementById('rewards-popup').style.display = 'block';
+    }
+
+    // Function to close the rewards popup
+    function closeRewardsPopup() {
+        document.getElementById('rewards-popup').style.display = 'none';
+    }
+</script>
+
+
+
+
+    <!-- Floating Chatbot -->
+    <div class="chatbot" onclick="toggleChatbot()">
+        <img src="images/chatbot-icon.png" alt="Chatbot">
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot-modal" class="chatbot-modal">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-cc6148eb-d356-4f38-900f-3a4d62b954c8/bots/crc0a_kasiFaQs/webchat?_version_=2" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+        <button class="close-btn" onclick="closeChatbot()">Close</button>
+    </div>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <h2>Our Location</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d213161.51303289312!2d24.41501755553467!3d-33.9186588332707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9519b20d2b660b%3A0x2ed45c81fa2f3fa0!2sCape%20Town%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1669298493602!5m2!1sen!2sza" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 KASI KULCHA. All rights reserved.</p>
+            <p>&copy; 2024 Kasi Kulcha. All rights reserved.</p>
             <ul class="footer-links">
-                <li><a href="#terms">Terms of Service</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="TermsAndConditions.html">Terms & Conditions</a></li>
             </ul>
         </div>
     </footer>
 
-    <!-- Floating Chatbot Button -->
-    <button class="chatbot-button" onclick="toggleChatbot()">💬</button>
-
-    <!-- Chatbot iframe container -->
-    <div id="chatbot-container">
-        <button class="exit-chatbot" onclick="toggleChatbot()">X</button>
-        <iframe src="https://copilotstudio.microsoft.com/environments/Default-cc6148eb-d356-4f38-900f-3a4d62b954c8/bots/crc0a_kasiFaQs/webchat?_version_=2" frameborder="0"></iframe>
-    </div>
-
-    <!-- OpenStreetMap Integration using Leaflet -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-        // Initialize the map
-        var map = L.map('map').setView([-33.9249, 18.4241], 13); // Coordinates for Cape Town
-
-        // Set up the OpenStreetMap tile layer
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Add a marker to the map
-        L.marker([-33.9249, 18.4241]).addTo(map)
-            .bindPopup("Welcome to Cape Town!")
-            .openPopup();
-    </script>
-
-    <!-- Chatbot functionality -->
-    <script>
-        function toggleChatbot() {
-            var chatbotContainer = document.getElementById('chatbot-container');
-            if (chatbotContainer.style.display === 'none' || chatbotContainer.style.display === '') {
-                chatbotContainer.style.display = 'block'; // Show the chatbot
-            } else {
-                chatbotContainer.style.display = 'none'; // Hide the chatbot
-            }
-        }
-    </script>
+    <script src="js/chatbot.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="CSS/profilecss.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" alt="Kasi Kulcha Logo" width="120">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="CustomerPage.html">Home</a></li>
+                <li><a href="Services.html">Services & Products</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <h2>Your Profile</h2>
+
+        <!-- Profile Picture Section -->
+        <div class="profile-pic">
+            <img id="profilePic" src="images/—Pngtree—black default avatar_5407174.png" alt="Profile Picture" class="profile-img">
+            <input type="file" id="uploadProfilePic" name="profilePic" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+        <!-- Profile Form -->
+        <form id="profile-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" value="" required>
+
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter a new password (optional)">
+
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <!-- Delete Account Button -->
+        <div class="delete-account">
+            <p>Want to delete your account? This action is permanent and cannot be undone.</p>
+            <button onclick="deleteAccount()">Delete Account</button>
+        </div>
+    </section>
+
+    <script>
+        // Handle Profile Form Submission
+        document.getElementById('profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Collect form data
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            // Handle saving updated details (this could involve sending data to a server or updating locally)
+            alert('Profile updated successfully!');
+            console.log({ username, email, phone, password });
+        });
+
+        // Handle Delete Account
+        function deleteAccount() {
+            const confirmation = confirm("Are you sure you want to delete your account? This action is permanent.");
+            if (confirmation) {
+                // Call server-side functionality to delete the account (could be an AJAX request)
+                alert("Your account has been deleted.");
+                window.location.href = 'index.html'; // Redirect to homepage or login page
+            }
+        }
+
+        // Function to Preview Profile Picture
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('profilePic');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

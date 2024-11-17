@@ -9,33 +9,91 @@
 <body>
     <div class="driver-dashboard-wrapper">
         <div class="driver-dashboard-box">
+            <!-- Profile Section -->
+            <div class="profile-section">
+                <img src="images/—Pngtree—black default avatar_5407174.png" alt="Driver Profile Picture" class="profile-pic">
+                <h2>Sphelo Mranu (Avanza 2008 model)</h2> <!-- Change this dynamically if needed -->
+                <p>Status: <span id="driver-status">Available</span></p> <!-- Driver status -->
+            </div>
+
+            <!-- Dashboard Header -->
             <div class="driver-dashboard-header">
                 <h1>Driver Dashboard</h1>
                 <p>Welcome! Ready to start your day.</p>
             </div>
 
-            <!-- Clock-In/Clock-Out Area -->
-            <div class="clock-area">
-                <h2>Clock In/Out</h2>
-                <p id="clock-status">Clock In</p>
-                <button id="clock-button" class="clock-button">Clock In</button>
-            </div>
+            <!-- Main Content Area - Flex Grid Layout -->
+            <div class="content-area">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Clock-In/Clock-Out Area -->
+                    <div class="clock-area">
+                        <h2>Clock In/Out</h2>
+                        <p id="clock-status">Clock In</p>
+                        <button id="clock-button" class="clock-button">Clock In</button>
+                    </div>
 
-            <!-- Pickup and Drop-off Requests -->
-            <div class="requests-area">
-                <h2>Pickup and Drop-off Requests</h2>
-                <div class="requests">
-                    <div class="request">
-                        <h3>Pickup Request #1</h3>
-                        <p>Location: 123 Elm St</p>
-                        <button class="btn-pickup">Start Pickup</button>
+                    <!-- Location Area (Map or Current Location) -->
+                    <div class="location-area">
+                        <h2>Current Location</h2>
+                        <p>Latitude: <span id="latitude">-</span>, Longitude: <span id="longitude">-</span></p>
+                        <button id="update-location" class="update-location">Update Location</button>
                     </div>
-                    <div class="request">
-                        <h3>Drop-off Request #1</h3>
-                        <p>Location: 456 Oak Ave</p>
-                        <button class="btn-dropoff">Start Drop-off</button>
+
+                    <!-- Notifications -->
+                    <div class="notifications-area">
+                        <h2>Notifications</h2>
+                        <ul>
+                            <li>New Pickup Request #2 at 123 Lwazi Street</li>
+                            <li>Pickup #1 has been canceled.</li>
+                        </ul>
                     </div>
-                    <!-- Add more requests as necessary -->
+
+                    <!-- Earnings Area -->
+                    <div class="earnings-area">
+                        <h2>Estimated Earnings</h2>
+                        <p>Total Earnings: R150.00</p>
+                    </div>
+
+                    <!-- Help & Support -->
+                    <div class="support-area">
+                        <button id="help-button" class="help-button">Help & Support</button>
+                    </div>
+
+                    <!-- Logout Section -->
+                    <div class="logout-area">
+                        <button id="logout-button" class="logout-button">Logout</button>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Trip History -->
+                    <div class="history-area">
+                        <h2>Trip History</h2>
+                        <div class="trip">
+                            <p><strong>Pickup:</strong> 123 Kwenzo Malibu</p>
+                            <p><strong>Drop-off:</strong> 456 Phillipi amatarani</p>
+                            <p><strong>Status:</strong> Completed</p>
+                        </div>
+                    </div>
+
+                    <!-- Requests Area -->
+                    <div class="requests-area">
+                        <h2>Pickup and Drop-off Requests</h2>
+                        <div class="requests">
+                            <div class="request">
+                                <h3>Pickup Request #1</h3>
+                                <p>Location: 123 Ebayi</p>
+                                <button class="btn-pickup">Start Pickup</button>
+                            </div>
+                            <div class="request">
+                                <h3>Drop-off Request #1</h3>
+                                <p>Location: 456 Harbour Street</p>
+                                <button class="btn-dropoff">Start Drop-off</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

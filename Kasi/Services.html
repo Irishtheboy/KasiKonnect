@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="CSS/servicescss.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="images/logo-removebg-preview.png" alt="konnect">
+            <img src="images/logo-removebg-preview.png" alt="Kasi Kulcha Logo" width="120">
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Services.html">Services</a></li>
-                
+                <li><a href="CustomerPage.html">Home</a></li>
+                <li><a href="Services.html">Services & Products</a></li>
+                <li><a href="ProfilePage.html">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -63,33 +64,100 @@
         <h2>Your Cart</h2>
         <div id="cart-items"></div>
         <p id="total-price">Total: R0</p>
-        <button id="checkout-button" disabled>Proceed to Checkout</button>
+        <label for="distance">Distance (in kilometers): </label>
+        <input type="number" id="distance" value="0" min="0" onchange="updateTotal()">
+        <p>Delivery Fee: R <span id="delivery-fee">0</span> (R5 per kilometer)</p>
+        <button id="checkout" onclick="completePurchase()">Buy Now</button>
     </section>
 
-    <!-- Secure Payment Modal -->
-    <div id="payment-modal" class="modal hidden">
-        <div class="modal-content">
-            <h3>Secure Payment</h3>
-            <form id="payment-form">
-                <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" maxlength="16" required>
+    <!-- Secure Payment Section -->
+    <div id="payment-section" style="background-color: #f4f4f9; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 40px; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <h3 style="font-size: 1.8em; font-weight: 600; color: #333; margin-bottom: 20px; text-align: center;">Secure Payment</h3>
+        <form id="payment-form" style="display: flex; flex-direction: column; gap: 20px;">
+            <label for="bank-select" style="font-size: 1.1em; color: #333; font-weight: bold;">Select Your Bank:</label>
+            <select id="bank-select" style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 5px; outline: none; transition: border-color 0.3s;">
+                <option value="">-- Choose a Bank --</option>
+                <option value="AfricanBank">African Bank</option>
+                <option value="StandardBank">Standard Bank</option>
+                <option value="FNB">FNB</option>
+                <option value="Nedbank">Nedbank</option>
+                <option value="Absa">Absa</option>
+            </select>
+            <label for="card-number" style="font-size: 1.1em; color: #333; font-weight: bold;">Card Number:</label>
+            <input type="text" id="card-number" maxlength="16" required style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 5px; outline: none; transition: border-color 0.3s;">
+            <label for="expiry-date" style="font-size: 1.1em; color: #333; font-weight: bold;">Expiry Date:</label>
+            <input type="month" id="expiry-date" required style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 5px; outline: none; transition: border-color 0.3s;">
+            <label for="cvv" style="font-size: 1.1em; color: #333; font-weight: bold;">CVV:</label>
+            <input type="password" id="cvv" maxlength="3" required style="padding: 10px; font-size: 1em; border: 1px solid #ddd; border-radius: 5px; outline: none; transition: border-color 0.3s;">
+            <button type="submit" style="background-color: #4CAF50; color: white; padding: 12px 20px; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                Pay Now
+            </button>
+            <button type="button" id="cancel-payment" style="background-color: #f44336; color: white; padding: 12px 20px; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                Cancel
+            </button>
+        </form>
+    </div>
 
-                <label for="expiry-date">Expiry Date:</label>
-                <input type="month" id="expiry-date" required>
-
-                <label for="cvv">CVV:</label>
-                <input type="password" id="cvv" maxlength="3" required>
-
-                <button type="submit">Pay Now</button>
-                <button type="button" id="cancel-payment">Cancel</button>
-            </form>
+    <!-- Reward Points Modal (Hidden) -->
+    <div id="reward-modal" style="display: none; background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; align-items: center; justify-content: center;">
+        <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; width: 300px;">
+            <h4 style="color: #333;">Congratulations!</h4>
+            <p style="color: #333;">You have earned 100 reward points for selecting African Bank!</p>
+            <button onclick="closeRewardModal()" style="background-color: #4CAF50; color: white; padding: 10px 20px; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer;">Close</button>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Crave Curb</p>
-    </footer>
+    <script>
+        // Initialize the cart
+        let cart = [];
 
-    <script src="js/servicesjs.js"></script>
+        // Add product to the cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const price = parseFloat(this.getAttribute('data-price'));
+                const item = { name, price };
+                cart.push(item);
+                updateCart();
+            });
+        });
+
+        // Update the cart display and total price
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `${item.name} - R${item.price.toFixed(2)} <button onclick="removeItem(${index})">Remove</button>`;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price;
+            });
+
+            updateTotal(total);
+        }
+
+        // Remove item from the cart
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Update total price including delivery fee
+        function updateTotal(total = 0) {
+            const distance = parseFloat(document.getElementById('distance').value) || 0;
+            const deliveryFee = distance * 5; // R5 per kilometer
+            document.getElementById('delivery-fee').innerText = deliveryFee.toFixed(2);
+            const totalPrice = total + deliveryFee;
+            document.getElementById('total-price').innerText = `Total: R${totalPrice.toFixed(2)}`;
+        }
+
+        // Handle checkout
+        function completePurchase() {
+            alert('Your purchase is complete!');
+        }
+    </script>
 </body>
 </html>

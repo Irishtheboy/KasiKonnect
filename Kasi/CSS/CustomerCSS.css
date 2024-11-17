@@ -2,7 +2,9 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #45a049;
+    line-height: 1.6;
 }
 
 /* Header */
@@ -10,20 +12,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #4CAF50;
+    padding: 15px 30px;
+    background-color: #45a049;
     color: white;
-    padding: 10px 20px;
 }
 
-header .logo h1 {
-    margin: 0;
+header .logo img {
+    height: 50px;
 }
 
 header nav ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 header nav ul li {
@@ -31,270 +33,306 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #45a049;
 }
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: linear-gradient(to bottom right, #f4f4f4, #ddd);
 }
 
-.hero h2 {
-    font-size: 2.5em;
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 3em;
     margin-bottom: 20px;
-    color: #333;
 }
 
-.hero p {
+.hero-text p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    color: #555;
 }
 
-.hero button {
-    background: #4CAF50;
+.hero-text button {
+    background-color: #45a049;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 15px 25px;
     font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.hero button:hover {
-    background: #45a049;
+.hero-text button:hover {
+    background-color: black;
 }
 
-/* Community Delivery Network Section */
-.community-delivery {
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Categories Section */
+.categories {
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px;
     background: #f9f9f9;
 }
 
-.community-delivery .map-container {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 800px;
-    height: 400px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
+.categories h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-#map {
-    width: 100%;
-    height: 100%;
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.community-delivery button {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.community-delivery button:hover {
-    background: #45a049;
-}
-
-/* Product Cards Section */
-.product-cards {
-    padding: 50px 20px;
+.category-card {
+    flex: 1;
+    max-width: 200px;
     text-align: center;
-    background: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-cards h2 {
+.category-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    font-size: 1.2em;
+    color: #45a049;
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 50px;
+    text-align: center;
+    background: #fff;
+}
+
+.featured-products h2 {
     font-size: 2.5em;
     margin-bottom: 30px;
-    color: #333;
 }
 
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.card {
+.product-card {
     background: white;
-    width: 280px;
-    margin: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-.card img {
+.product-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
-.card-content {
-    padding: 15px;
+.product-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #45a049;
 }
 
-.card h3 {
-    font-size: 1.5em;
-    color: #333;
+.product-card p {
+    color: #777;
+    margin-bottom: 10px;
 }
 
-.card p {
-    font-size: 1em;
-    color: #555;
-}
-
-.card button {
-    background: #4CAF50;
+.product-card button {
+    background-color: #45a049;
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 20px;
+    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 15px;
 }
 
-.card button:hover {
-    background: #45a049;
+.product-card button:hover {
+    background-color: #45a049;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background: #333;
+    background: #45a049;
     color: white;
 }
 
-footer .footer-content p {
-    margin: 0;
+footer .footer-content {
+    font-size: 0.9em;
 }
 
 footer .footer-links {
     list-style: none;
     margin: 10px 0 0;
     padding: 0;
-    display: inline-flex;
-    gap: 15px;
+}
+
+footer .footer-links li {
+    display: inline;
+    margin-right: 15px;
 }
 
 footer .footer-links li a {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
 }
 
 footer .footer-links li a:hover {
     text-decoration: underline;
 }
-/* Logo Styling */
-.logo-img {
-    width: auto;
-    height: 60px; /* Adjust based on your logo size */
-    display: block;
-    margin: 0 auto; /* Centers the logo horizontally */
-}
-/* Floating Button */
-.chatbot-button {
+
+/* Floating Chatbot */
+.chatbot {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    padding: 15px;
-    font-size: 20px;
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     z-index: 1000;
+    transition: transform 0.3s;
 }
 
-/* Chatbot Container */
-.chatbot-container {
+.chatbot img {
+    width: 40px;
+    height: 40px;
+}
+
+.chatbot:hover {
+    transform: scale(1.1);
+}
+
+/* Map Section */
+.map-section {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Floating Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.chatbot img {
+    width: 40px;
+    height: 40px;
+}
+
+.chatbot:hover {
+    transform: scale(1.1);
+}
+
+/* Chatbot Modal */
+.chatbot-modal {
+    display: none; /* Hidden by default */
     position: fixed;
     bottom: 80px;
     right: 20px;
-    width: 300px;
+    width: 350px;
+    height: 500px;
     background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    display: none; /* Hidden by default */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    overflow: hidden;
 }
 
-.chatbot-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.chatbot-modal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.chatbot-content {
-    padding: 15px;
-}
-
-.chatbot-messages {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
-.chatbot-content input {
-    width: calc(100% - 60px);
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.chatbot-content button {
-    padding: 10px 15px;
-    background-color: #007bff;
+.chatbot-modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #45a049;
     color: white;
     border: none;
-    border-radius: 4px;
+    padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.chatbot-content button:hover {
-    background-color: #0056b3;
-}
-@media screen and (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .hero h2 {
-        font-size: 2em;
-    }
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('images/bg1.jpg'); /* Add the correct path to your image */
-    background-size: cover; /* Ensure the image covers the entire screen */
-    background-position: center center; /* Center the image */
-    background-attachment: fixed; /* Make the background image fixed when scrolling */
+.chatbot-modal .close-btn:hover {
+    background-color: #45a049;
 }

@@ -20,20 +20,51 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100%;
 }
 
+/* Dashboard box */
 .driver-dashboard-box {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* Header */
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#driver-status {
+    font-weight: bold;
+    color: #4CAF50; /* Available status color */
+}
+
+/* Dashboard Header */
 .driver-dashboard-header {
+    text-align: center;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -47,33 +78,63 @@ p {
     color: #666;
 }
 
-/* Clock Area */
-.clock-area {
-    margin-bottom: 30px;
+/* Main Content Area - Flex Layout */
+.content-area {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.clock-area h2 {
+/* Left Column */
+.left-column {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 250px;
+}
+
+/* Right Column */
+.right-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Section Styling */
+h2 {
     margin-bottom: 10px;
     font-size: 18px;
 }
 
-#clock-status {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #333;
+p {
+    font-size: 14px;
+    color: #777;
 }
 
-.clock-button {
-    padding: 10px 20px;
+/* Clock-In/Clock-Out Area */
+.clock-area, .location-area, .notifications-area, .earnings-area, .support-area, .logout-area {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
 }
 
-.clock-button:hover {
+button:hover {
     background-color: #45a049;
+}
+
+/* Notifications List */
+.notifications-area ul {
+    list-style-type: none;
+}
+
+.notifications-area li {
+    margin-bottom: 5px;
 }
 
 /* Requests Area */
@@ -110,14 +171,38 @@ p {
 }
 
 .btn-pickup, .btn-dropoff {
-    padding: 8px 16px;
     background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 .btn-pickup:hover, .btn-dropoff:hover {
     background-color: #45a049;
+}
+
+/* Earnings Area */
+.earnings-area {
+    margin-top: 20px;
+}
+
+.earnings-area p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Help & Support */
+.help-button {
+    background-color: #ff9800;
+}
+
+.help-button:hover {
+    background-color: #fb8c00;
+}
+
+/* Logout Section */
+.logout-button {
+    background-color: #f44336;
+}
+
+.logout-button:hover {
+    background-color: #e53935;
 }
