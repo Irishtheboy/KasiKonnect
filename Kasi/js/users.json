@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "email": "customer@example.com",
+            "password": "customer123",
+            "role": "customer"
+        },
+        {
+            "email": "vendor@example.com",
+            "password": "vendor123",
+            "role": "vendor"
+        }
+    ]
+}

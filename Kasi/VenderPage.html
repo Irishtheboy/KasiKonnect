@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="CSS/vendercss.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="vendor-dashboard-wrapper">
+        <!-- Header Section -->
+        <header class="vendor-dashboard-header">
+            <h1>Welcome, Vendor</h1>
+            <p>Empower your business with real-time insights and efficient management tools.</p>
+            <button class="btn-plan-page" onclick="navigateToPlanPage()">📜 View Subscription Plans</button>
+        </header>
+
+        <!-- Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- Sales Graph -->
+            <section class="sales-graph shadow">
+                <h2>📊 Sales Performance</h2>
+                <canvas id="salesChart"></canvas>
+            </section>
+
+            <!-- Product Management -->
+            <section class="product-management-area shadow">
+                <h2>📦 Add a New Product</h2>
+                <form class="product-form">
+                    <div class="input-group">
+                        <input type="text" id="product-name" name="product-name" required>
+                        <label for="product-name">Product Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="product-price" name="product-price" required>
+                        <label for="product-price">Price</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="product-description" name="product-description" rows="4" required></textarea>
+                        <label for="product-description">Description</label>
+                    </div>
+                    <div class="input-group">
+                        <label for="product-image" class="image-label">🖼️ Upload Product Image</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn-submit">Add Product</button>
+                </form>
+            </section>
+
+            <!-- Recent Orders -->
+            <section class="orders-area shadow">
+                <h2>🛒 Recent Orders</h2>
+                <div class="orders">
+                    <div class="order-card">
+                        <h3>Order #101</h3>
+                        <p>Customer: John Doe</p>
+                        <p>Status: <span class="status pending">Pending</span></p>
+                        <button class="btn btn-action">🛠️ Process Order</button>
+                    </div>
+                    <div class="order-card">
+                        <h3>Order #102</h3>
+                        <p>Customer: Jane Smith</p>
+                        <p>Status: <span class="status shipped">Shipped</span></p>
+                        <button class="btn btn-view">👁️ View Order</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="notifications-area shadow">
+                <h2>🔔 Notifications</h2>
+                <div class="notification-card">
+                    <p><strong>New Order Received</strong> - Order #105</p>
+                </div>
+                <div class="notification-card">
+                    <p><strong>Product Out of Stock</strong> - Product XYZ</p>
+                </div>
+                <div class="notification-card">
+                    <p><strong>New Message</strong> - "Please ship the item soon!"</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript function to navigate to the Plan Page
+        function navigateToPlanPage() {
+            window.location.href = "venderOptionsPage.html"; // Update with the correct file path
+        }
+    </script>
+    <script src="js/venderjs.js"></script>
+</body>
+</html>

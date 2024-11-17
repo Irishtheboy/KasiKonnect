@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services & Products</title>
+    <link rel="stylesheet" href="CSS/servicescss.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" alt="konnect">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Services.html">Services</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product-cards">
+        <h2>Available Services & Products</h2>
+        <div class="card-container">
+            <!-- Example Product Cards -->
+            <div class="card">
+                <img src="images/Content/img1.jpg" alt="Groceries">
+                <div class="card-content">
+                    <h3>Groceries Bundle</h3>
+                    <p>Price: <strong>R200</strong></p>
+                    <button class="add-to-cart" data-name="Groceries Bundle" data-price="200">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/Content/img2.jpg" alt="Cleaning Services">
+                <div class="card-content">
+                    <h3>House Cleaning</h3>
+                    <p>Price: <strong>R500</strong></p>
+                    <button class="add-to-cart" data-name="House Cleaning" data-price="500">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/Content/img3.jpg" alt="Laundry Services">
+                <div class="card-content">
+                    <h3>Laundry Service</h3>
+                    <p>Price: <strong>R150</strong></p>
+                    <button class="add-to-cart" data-name="Laundry Service" data-price="150">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/Content/img4.jpg" alt="Plumbing Services">
+                <div class="card-content">
+                    <h3>Plumbing Repair</h3>
+                    <p>Price: <strong>R600</strong></p>
+                    <button class="add-to-cart" data-name="Plumbing Repair" data-price="600">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: R0</p>
+        <button id="checkout-button" disabled>Proceed to Checkout</button>
+    </section>
+
+    <!-- Secure Payment Modal -->
+    <div id="payment-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Secure Payment</h3>
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" maxlength="16" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="month" id="expiry-date" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" maxlength="3" required>
+
+                <button type="submit">Pay Now</button>
+                <button type="button" id="cancel-payment">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Crave Curb</p>
+    </footer>
+
+    <script src="js/servicesjs.js"></script>
+</body>
+</html>

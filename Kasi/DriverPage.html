@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" href="CSS/Drivercss.css">
+</head>
+<body>
+    <div class="driver-dashboard-wrapper">
+        <div class="driver-dashboard-box">
+            <div class="driver-dashboard-header">
+                <h1>Driver Dashboard</h1>
+                <p>Welcome! Ready to start your day.</p>
+            </div>
+
+            <!-- Clock-In/Clock-Out Area -->
+            <div class="clock-area">
+                <h2>Clock In/Out</h2>
+                <p id="clock-status">Clock In</p>
+                <button id="clock-button" class="clock-button">Clock In</button>
+            </div>
+
+            <!-- Pickup and Drop-off Requests -->
+            <div class="requests-area">
+                <h2>Pickup and Drop-off Requests</h2>
+                <div class="requests">
+                    <div class="request">
+                        <h3>Pickup Request #1</h3>
+                        <p>Location: 123 Elm St</p>
+                        <button class="btn-pickup">Start Pickup</button>
+                    </div>
+                    <div class="request">
+                        <h3>Drop-off Request #1</h3>
+                        <p>Location: 456 Oak Ave</p>
+                        <button class="btn-dropoff">Start Drop-off</button>
+                    </div>
+                    <!-- Add more requests as necessary -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Driver Page JS -->
+    <script src="js/driverjs.js"></script>
+</body>
+</html>

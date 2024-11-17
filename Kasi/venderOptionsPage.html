@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Options</title>
+    <link rel="stylesheet" href="CSS/options.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <!-- Logo Image in the Navbar -->
+        <a href="#" class="navbar-brand">
+            <img src="images/logo-removebg-preview.png" alt="Crave Curb Logo" class="logo">
+        </a>
+
+        <ul class="navbar-links">
+            <li><a href="VenderPage.html">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </nav>
+
+    <div class="options-wrapper">
+        <!-- Header -->
+        <header class="options-header">
+            <h1>Subscription Options</h1>
+            <p>Choose the plan that suits your business needs. Get the most out of your experience.</p>
+        </header>
+
+        <!-- Options Section -->
+        <main class="options-container">
+            <!-- Yearly Plan -->
+            <section class="subscription-plan yearly shadow">
+                <h2>Yearly Plan</h2>
+                <p class="price">R600/year</p>
+                <ul class="benefits-list">
+                    <li>✅ Save 20% compared to monthly</li>
+                    <li>✅ Priority customer support</li>
+                    <li>✅ Advanced analytics tools</li>
+                </ul>
+                <button class="select-plan" onclick="selectPlan('Yearly')">Select Yearly Plan</button>
+            </section>
+
+            <!-- Monthly Plan -->
+            <section class="subscription-plan monthly shadow">
+                <h2>Monthly Plan</h2>
+                <p class="price">R65/month</p>
+                <ul class="benefits-list">
+                    <li>✅ Pay as you go</li>
+                    <li>✅ Flexible cancellation</li>
+                    <li>✅ Basic analytics tools</li>
+                </ul>
+                <button class="select-plan" onclick="selectPlan('Monthly')">Select Monthly Plan</button>
+            </section>
+        </main>
+
+        <!-- Selected Plan Display -->
+        <footer class="selected-plan-display">
+            <h3>Current Plan: <span id="current-plan">None</span></h3>
+        </footer>
+    </div>
+
+    <script src="js/plan.js"></script>
+</body>
+</html>
